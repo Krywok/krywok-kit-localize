@@ -15,7 +15,7 @@ class Localize:
     _base_locale: ClassVar[str]
 
     _current_locale: ClassVar[ContextVar[str]
-                             ] = ContextVar("hetman_kit_localize.locale")
+                             ] = ContextVar("krywok_kit_localize.locale")
 
     @classmethod
     def resolve_translation(

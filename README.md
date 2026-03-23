@@ -1,16 +1,16 @@
-<img src="https://hetman.app/svg/logo/full-white-text.svg" alt="Hetman Logo" width="200" height="38" />
+<img src="https://krywok.com/svg/logo/full-white-text.svg" alt="Krywok Logo" width="200" height="38" />
 
-**Hetman Kit Localize** provides thread-safe locale management using context variables. It enables concurrent execution with different locale settings per context.
+**Krywok Kit Localize** provides thread-safe locale management using context variables. It enables concurrent execution with different locale settings per context.
 
 ## Installation
 
 ```bash
-pip install hetman-kit-localize
+pip install krywok-kit-localize
 ```
 
 ## Why use this?
 
-Managing locale settings in concurrent applications can be challenging. **Hetman Kit Localize** allows you to:
+Managing locale settings in concurrent applications can be challenging. **Krywok Kit Localize** allows you to:
 
 1.  **Thread-Safe Locale Management**: Use context variables to ensure each execution context has its own locale.
 2.  **Simple API**: Easy-to-use class methods for getting and setting locales.
@@ -24,7 +24,7 @@ Managing locale settings in concurrent applications can be challenging. **Hetman
 Set the base locale once during application initialization:
 
 ```python
-from hetman_kit_localize import Localize
+from krywok_kit_localize import Localize
 
 # Set the base (default) locale
 Localize.set_base_locale("en")
@@ -33,7 +33,7 @@ Localize.set_base_locale("en")
 ### Getting and Setting Locales
 
 ```python
-from hetman_kit_localize import Localize
+from krywok_kit_localize import Localize
 
 # Set up the base locale first
 Localize.set_base_locale("en")
@@ -54,7 +54,7 @@ print(Localize.get_base_locale())  # Output: en
 The locale management is context-aware, making it perfect for web applications where each request might need a different locale:
 
 ```python
-from hetman_kit_localize import Localize
+from krywok_kit_localize import Localize
 import asyncio
 
 
@@ -88,7 +88,7 @@ asyncio.run(main())
 The `resolve_translation()` method helps you retrieve the correct translation from a dictionary based on the current locale:
 
 ```python
-from hetman_kit_localize import Localize
+from krywok_kit_localize import Localize
 
 # Set up locales
 Localize.set_base_locale("en")
@@ -119,16 +119,16 @@ print(Localize.resolve_translation(partial_messages, strict=False))  # Output: N
 
 ## Core Features
 
--   **Thread-Safe**: Uses Python's `contextvars` for safe concurrent locale management.
--   **Simple API**: Just four class methods: `set_base_locale()`, `get_base_locale()`, `set_locale()`, `get_locale()`.
--   **Context Variables**: Each execution context maintains its own locale state.
+- **Thread-Safe**: Uses Python's `contextvars` for safe concurrent locale management.
+- **Simple API**: Just four class methods: `set_base_locale()`, `get_base_locale()`, `set_locale()`, `get_locale()`.
+- **Context Variables**: Each execution context maintains its own locale state.
 
 ## Why "Kit"?
 
-This package is called **Hetman Kit Localize** because it's designed to be a building block ("kit") for your own i18n solutions. Other classes can inherit from `Localize` to easily add locale management to their functionality:
+This package is called **Krywok Kit Localize** because it's designed to be a building block ("kit") for your own i18n solutions. Other classes can inherit from `Localize` to easily add locale management to their functionality:
 
 ```python
-from hetman_kit_localize import Localize
+from krywok_kit_localize import Localize
 
 class MyI18nClass(Localize):
     MESSAGES = {
@@ -143,7 +143,7 @@ class MyI18nClass(Localize):
             "de": "Auf Wiedersehen!"
         }
     }
-    
+
     @classmethod
     def get_message(cls, key: str) -> str:
         # Use resolve_translation to get the right message
