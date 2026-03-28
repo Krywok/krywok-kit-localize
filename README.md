@@ -1,4 +1,4 @@
-<img src="https://krywok.com/svg/logo/full-white-text.svg" alt="Krywok Logo" width="200" height="38" />
+<img src="https://krywok.com/svg/logo/full-mix-white-alpha.svg" alt="Krywok Logo" width="190" height="55" />
 
 **Krywok Kit Localize** provides thread-safe locale management using context variables. It enables concurrent execution with different locale settings per context.
 
